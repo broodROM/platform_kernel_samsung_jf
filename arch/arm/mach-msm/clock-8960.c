@@ -6637,6 +6637,18 @@ static void __init reg_init(void)
 	}
 }
 
+void __ref SetGPUpll_config(u32 loc, unsigned long freq)
+{
+	/* Program PLL15 to 900MHZ */
+	pll15_config.l = loc | BVAL(31, 7, 0x620);
+	pll15_config.m = 0x1;
+	pll15_config.n = 0x3;
+	//fmax_gfx3d_8064ab[VDD_DIG_HIGH] = freq;
+	//gfx3d_clk.c.fmax = fmax_gfx3d_8064ab;
+	//gfx3d_clk.freq_tbl[ARRAY_SIZE(clk_tbl_gfx3d)-1].freq_hz = freq;
+	pr_alert("SET GPU OC-%d-%ld", loc, freq / 1000000);
+}
+
 struct clock_init_data msm8960_clock_init_data __initdata;
 static void __init msm8960_clock_pre_init(void)
 {

@@ -236,7 +236,6 @@ static void tz_idle(struct kgsl_device *device, struct kgsl_pwrscale *pwrscale)
 		} else {
 			idle = priv->bin.total_time - priv->bin.busy_time;
 			idle = (idle > 0) ? idle : 0;
-			val = __secure_tz_entry(TZ_UPDATE_ID, idle, device->id);
 		}
 	}	
 #else
