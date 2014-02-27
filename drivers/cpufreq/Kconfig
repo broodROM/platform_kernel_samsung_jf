@@ -131,6 +131,15 @@ config CPU_FREQ_DEFAULT_GOV_INTELLIDEMAND
           Use the CPUFreq governor 'intellidemand' as default. This is
           based on Ondemand with browsing detection based on GPU loading
 
+config CPU_FREQ_DEFAULT_GOV_INTELLIACTIVE
+	bool "intelliactive"
+	select CPU_FREQ_GOV_INTELLIACTIVE
+	help
+	  Use the CPUFreq governor 'intelliactive' as default. This allows
+	  you to get a full dynamic cpu frequency capable system by simply
+	  loading your cpufreq low-level hardware driver, using the
+	  'interactive' governor for latency-sensitive workloads.
+
 config CPU_FREQ_DEFAULT_GOV_ONDEMAND
         bool "ondemand"
         select CPU_FREQ_GOV_ONDEMAND
@@ -215,11 +224,11 @@ config CPU_FREQ_GOV_ADAPTIVE
           to reduce power consumption in middle operation level level up
           will be done in step by step to prohibit system from going to
           max operation level.
-
-          To compile this driver as a module, choose M here: the
+		  
+		  To compile this driver as a module, choose M here: the
           module will be called cpufreq_adaptive.
-
-          For details, take a look at linux/Documentation/cpu-freq.
+		  
+		  For details, take a look at linux/Documentation/cpu-freq.
 
           If in doubt, say N.
 
@@ -373,6 +382,23 @@ config CPU_FREQ_GOV_INTELLIDEMAND
           For details, take a look at linux/Documentation/cpu-freq.
 
           If in doubt, say N.
+		  
+config CPU_FREQ_GOV_INTELLIACTIVE
+	tristate "'intelliactive' cpufreq policy governor"
+	help
+	  'intelliactive' - This driver adds a dynamic cpufreq policy governor
+	  designed for latency-sensitive workloads.
+
+	  This governor attempts to reduce the latency of clock
+	  increases so that the system is more responsive to
+	  interactive workloads.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called cpufreq_interactive.
+
+	  For details, take a look at linux/Documentation/cpu-freq.
+
+	  If in doubt, say N.
 
 config INTELLI_MAX_ACTIVE_FREQ
 	int "Max Active Freq for Intellidemand"
