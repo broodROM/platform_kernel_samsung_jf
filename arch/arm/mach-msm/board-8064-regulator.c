@@ -129,8 +129,8 @@ VREG_CONSUMERS(L14) = {
 	REGULATOR_SUPPLY("8921_l14",		NULL),
 };
 VREG_CONSUMERS(L15) = {
-	REGULATOR_SUPPLY("8921_l15",		NULL),
-	REGULATOR_SUPPLY("1800mV_LCD",		"mipi_dsi.1"),
+	REGULATOR_SUPPLY("8921_l15",		NULL),		
+	REGULATOR_SUPPLY("1800mV_LCD",		"mipi_dsi.1"),	
 };
 VREG_CONSUMERS(L16) = {
 	REGULATOR_SUPPLY("8921_l16",		NULL),
@@ -150,7 +150,7 @@ VREG_CONSUMERS(L16) = {
 #endif
 };
 VREG_CONSUMERS(L17) = {
-	REGULATOR_SUPPLY("8921_l17",		NULL),
+	REGULATOR_SUPPLY("8921_l17",		NULL),	  // 
 };
 VREG_CONSUMERS(L18) = {
 	REGULATOR_SUPPLY("8921_l18",		NULL),
@@ -874,7 +874,7 @@ apq8064_rpm_regulator_init_data[] __devinitdata = {
 	RPM_LDO(L8,  0, 1, 0, 2400000, 2800000, NULL,          0,     0), // This is Vibetonz / MAX77693
 	RPM_LDO(L9,  0, 1, 0, 2850000, 2850000, NULL,          0,     0),
 	RPM_LDO(L10, 0, 1, 0, 2800000, 3200000, NULL,          0,     0), // This is Cypress-touchkey-236
-	RPM_LDO(L11, 0, 1, 0, 3200000, 3200000, NULL,          0,     0), // This is Cypress-touchkey-236
+	RPM_LDO(L11, 0, 1, 0, 2800000, 3200000, NULL,          0,     0), // This is Cypress-touchkey-236
 	RPM_LDO(L12, 0, 1, 0, 1200000, 1200000, "8921_s4",     0,     0),
 	RPM_LDO(L13, 0, 0, 0, 2220000, 2220000, NULL,          0,     0),
 	RPM_LDO(L14, 0, 1, 0, 1800000, 1800000, NULL,          0,     0),
@@ -888,7 +888,7 @@ apq8064_rpm_regulator_init_data[] __devinitdata = {
 #endif
 	RPM_LDO(L21, 0, 1, 0, 1800000, 1800000, NULL,          0,     0),
 	RPM_LDO(L22, 0, 1, 0, 1800000, 1800000, NULL,          0,     0),
-	RPM_LDO(L23, 0, 1, 0, 1800000, 1800000, NULL,          0,     0),
+	RPM_LDO(L23, 0, 1, 0, 1600000, 1700000, NULL,          0,     0), // This is Cypress-touchkey-236
 	RPM_LDO(L24, 0, 1, 1,  750000, 1150000, "8921_s1", 10000, 10000),
 	RPM_LDO(L25, 1, 1, 0, 1250000, 1250000, "8921_s1", 10000, 10000),
 	RPM_LDO(L27, 0, 0, 0, 1100000, 1100000, "8921_s7",     0,     0),
