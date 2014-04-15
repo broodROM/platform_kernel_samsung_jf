@@ -96,13 +96,13 @@ VREG_CONSUMERS(L9) = {
 	REGULATOR_SUPPLY("vdd",			"3-0024"),
 };
 VREG_CONSUMERS(L10) = {
-	REGULATOR_SUPPLY("8921_l10",		NULL),
+	REGULATOR_SUPPLY("8921_l10",		NULL),    	  // Cypress 
 #ifdef CONFIG_WCNSS_CORE
 	REGULATOR_SUPPLY("iris_vddpa",		"wcnss_wlan.0"),
 #endif
 };
 VREG_CONSUMERS(L11) = {
-	REGULATOR_SUPPLY("8921_l11",		NULL),
+	REGULATOR_SUPPLY("8921_l11",		NULL),            // Cypress
 	REGULATOR_SUPPLY("dsi1_avdd",		"mipi_dsi.1"),
 };
 VREG_CONSUMERS(L12) = {
@@ -871,10 +871,10 @@ apq8064_rpm_regulator_init_data[] __devinitdata = {
 #else
 	RPM_LDO(L7,  0, 1, 0, 1850000, 2950000, NULL,          0,     0),
 #endif
-	RPM_LDO(L8,  0, 1, 0, 2800000, 2800000, NULL,          0,     0),
+	RPM_LDO(L8,  0, 1, 0, 2400000, 2800000, NULL,          0,     0), // This is Vibetonz / MAX77693
 	RPM_LDO(L9,  0, 1, 0, 2850000, 2850000, NULL,          0,     0),
-	RPM_LDO(L10, 0, 1, 0, 2900000, 3300000, NULL,          0,     0),
-	RPM_LDO(L11, 0, 1, 0, 3300000, 3300000, NULL,          0,     0),
+	RPM_LDO(L10, 0, 1, 0, 2800000, 3200000, NULL,          0,     0), // This is Cypress-touchkey-236
+	RPM_LDO(L11, 0, 1, 0, 3200000, 3200000, NULL,          0,     0), // This is Cypress-touchkey-236
 	RPM_LDO(L12, 0, 1, 0, 1200000, 1200000, "8921_s4",     0,     0),
 	RPM_LDO(L13, 0, 0, 0, 2220000, 2220000, NULL,          0,     0),
 	RPM_LDO(L14, 0, 1, 0, 1800000, 1800000, NULL,          0,     0),
