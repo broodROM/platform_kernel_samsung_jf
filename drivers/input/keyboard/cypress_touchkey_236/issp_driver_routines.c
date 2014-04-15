@@ -467,7 +467,7 @@ static void cypress_power_onoff(int onoff)
 
 	if (!reg_l23) {
 		reg_l23 = regulator_get(NULL, "8921_l23");
-		ret = regulator_set_voltage(reg_l23, 1800000, 1800000);
+		ret = regulator_set_voltage(reg_l23, 1600000, 1700000);
 
 		if (IS_ERR(reg_l23)) {
 			printk(KERN_ERR"could not get 8921_l23, rc = %ld\n",
@@ -478,7 +478,7 @@ static void cypress_power_onoff(int onoff)
 
 	if (!reg_l11) {
 		reg_l11 = regulator_get(NULL, "8921_l11");
-		ret = regulator_set_voltage(reg_l11, 3300000, 3300000);
+		ret = regulator_set_voltage(reg_l11, 2800000, 3200000);
 
 		if (IS_ERR(reg_l11)) {
 			printk(KERN_ERR"could not get 8921_l11, rc = %ld\n",
