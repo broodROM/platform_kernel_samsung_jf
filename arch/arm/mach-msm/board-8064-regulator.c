@@ -787,7 +787,7 @@ msm8064_pm8917_regulator_pdata[] __devinitdata = {
 		0, 5),
 	PM8XXX_LDO(L32,      "8917_l32", 0, 1, 3300000, 3300000, 200, NULL,
 		0, 6),
-	PM8XXX_LDO_APPLY_UV(L33,      "8917_l33", 1, 1, 1200000, 1200000, 200, NULL,
+	PM8XXX_LDO_APPLY_UV(L33,      "8917_l33", 1, 1, 1100000, 1100000, 200, NULL,	// This is barcode emulator
 		0, 7),
 	PM8XXX_LDO(L34,      "8917_l34", 0, 1, 2200000, 2200000, 200, NULL,
 		0, 8),
@@ -798,8 +798,8 @@ msm8064_pm8917_regulator_pdata[] __devinitdata = {
 	PM8XXX_LDO(L35,      "8917_l35", 0, 1, 1800000, 1800000, 200, NULL,
 		0, 9),
 #endif
-	PM8XXX_LDO(L36,      "8917_l36", 0, 1, 1800000, 1800000, 200, NULL,
-		0, 10),
+	PM8XXX_LDO(L36,      "8917_l36", 0, 1, 1700000, 1700000, 200, NULL, 	// This is IRDA
+		0, 10), 
 
 	/*
 	 *           ID     name   always_on  min_uV   max_uV en_t supply reg_ID
