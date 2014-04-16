@@ -867,14 +867,14 @@ apq8064_rpm_regulator_init_data[] __devinitdata = {
 	RPM_LDO(L5,  0, 1, 0, 2950000, 2950000, NULL,          0,     0),
 	RPM_LDO(L6,  0, 1, 0, 2950000, 2950000, NULL,          0,     0),
 #if defined(CONFIG_BCM4335) || defined(CONFIG_BCM4335_MODULE)
-	RPM_LDO(L7,  1, 1, 0, 1600000, 1700000, NULL,     0,     0),      // This is WLAN
+	RPM_LDO(L7,  1, 1, 0, 1700000, 1700000, NULL,     0,     0),      // This is WLAN
 #else
 	RPM_LDO(L7,  0, 1, 0, 1850000, 2950000, NULL,          0,     0),
 #endif
-	RPM_LDO(L8,  0, 1, 0, 2400000, 2800000, NULL,          0,     0), // This is Vibetonz / MAX77693
+	RPM_LDO(L8,  0, 1, 0, 2700000, 2700000, NULL,          0,     0), // This is Vibetonz / MAX77693
 	RPM_LDO(L9,  0, 1, 0, 2850000, 2850000, NULL,          0,     0),
 	RPM_LDO(L10, 0, 1, 0, 2800000, 3200000, NULL,          0,     0), // This is Cypress-touchkey-236
-	RPM_LDO(L11, 0, 1, 0, 2800000, 3200000, NULL,          0,     0), // This is Cypress-touchkey-236
+	RPM_LDO(L11, 0, 1, 0, 3200000, 3200000, NULL,          0,     0), // This is Cypress-touchkey-236
 	RPM_LDO(L12, 0, 1, 0, 1200000, 1200000, "8921_s4",     0,     0),
 	RPM_LDO(L13, 0, 0, 0, 2220000, 2220000, NULL,          0,     0),
 	RPM_LDO(L14, 0, 1, 0, 1800000, 1800000, NULL,          0,     0),
