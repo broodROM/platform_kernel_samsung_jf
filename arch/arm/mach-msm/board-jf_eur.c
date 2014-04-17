@@ -276,7 +276,7 @@ static void max77693_haptic_power_onoff(int onoff)
 
 	if (!reg_l8) {
 		reg_l8 = regulator_get(NULL, "8921_l8");
-		ret = regulator_set_voltage(reg_l8, 1700000, 2800000);
+		ret = regulator_set_voltage(reg_l8, 1700000, 2900000);
 
 		if (IS_ERR(reg_l8)) {
 			printk(KERN_ERR"could not get 8921_l8, rc = %ld\n",
